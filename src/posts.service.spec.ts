@@ -8,6 +8,19 @@ describe('PostsService', () => {
     text: 'Mocked post',
   };
 
+  const posts = [
+    {
+      text: 'Some pre-existing post',
+      id: '1',
+      date: new Date().toISOString(),
+    },
+    {
+      text: 'Mocked post',
+      id: '2',
+      date: new Date().toISOString(),
+    }
+  ]
+
   beforeEach(async () => {
     jest
     .useFakeTimers()
@@ -18,24 +31,12 @@ describe('PostsService', () => {
   });
 
   it('should add a new post', () => {
-    const postId: Post = {
-    ...post,
-    id: '2',
-    date: new Date().toISOString(),
-  };
-
-    expect(postsService.create(post)).toEqual(postId);
+  
+    expect(postsService.create(post)).toEqual(posts[1]);
   });
    
   it('should find a post', () => {
     const id ='1'
-    const postWithId = {
-      text: 'Some pre-existing post',
-      id: id,
-      date: new Date().toISOString(),
-    }
-    
-
-    expect(postsService.find(id)).toEqual(postWithId)
+    expect(postsService.find(id)).toEqual(posts[0])
   });
 });

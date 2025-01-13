@@ -13,10 +13,22 @@ describe('PostsService', () => {
   });
 
   it('should add a new post', () => {
-    // реализуйте тест-кейс
-  });
+    const postId: Post = {
+    ...post,
+    id: '3',
+    date: new Date().toISOString(),
+  };
 
+    expect(postsService.create(post)).toEqual(postId);
+  });
+   
   it('should find a post', () => {
-    // реализуйте тест-кейс
+    const postWithId = {
+      text: 'Some pre-existing post',
+      id: '2',
+      date: new Date().toISOString(),
+    }
+
+    expect(postsService.find('2')).toEqual(postWithId)
   });
 });

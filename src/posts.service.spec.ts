@@ -12,12 +12,12 @@ describe('PostsService', () => {
     {
       text: 'Some pre-existing post',
       id: '1',
-      date: new Date().toISOString(),
+      date: '2020-01-01T00:00:00.000Z',
     },
     {
       text: 'Mocked post',
       id: '2',
-      date: new Date().toISOString(),
+      date: '2020-01-01T00:00:00.000Z',
     }
   ]
 

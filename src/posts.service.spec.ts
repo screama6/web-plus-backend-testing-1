@@ -2,13 +2,16 @@ import { Post, PostsService } from './posts.service';
 
 describe('PostsService', () => {
   
-  jest.setSystemTime(new Date(Date.UTC(2022, 5, 15, 10, 15, 30, 500)));
+  
   let postsService: PostsService;
   const post: Omit<Post, 'id' | 'date'> = {
     text: 'Mocked post',
   };
 
   beforeEach(async () => {
+  jest
+  .useFakeTimers()
+  .setSystemTime(new Date('2020-01-01'));
     postsService = new PostsService();
     postsService.create({ text: 'Some pre-existing post' });
   });

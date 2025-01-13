@@ -28,13 +28,14 @@ describe('PostsService', () => {
   });
    
   it('should find a post', () => {
+    const id ='1'
     const postWithId = {
       text: 'Some pre-existing post',
-      id: '1',
+      id: id,
       date: new Date().toISOString(),
     }
     
 
-    expect(postsService.find('1')).toEqual(postWithId)
+    expect(postsService.find(id)).toEqual(postWithId)
   });
 });

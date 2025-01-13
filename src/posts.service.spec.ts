@@ -9,9 +9,9 @@ describe('PostsService', () => {
   };
 
   beforeEach(async () => {
-  jest
-  .useFakeTimers()
-  .setSystemTime(new Date('2020-01-01'));
+    jest
+    .useFakeTimers()
+    .setSystemTime(new Date('2020-01-01'));
     postsService = new PostsService();
     postsService.create({ text: 'Some pre-existing post' });
   });
@@ -19,7 +19,7 @@ describe('PostsService', () => {
   it('should add a new post', () => {
     const postId: Post = {
     ...post,
-    id: '2',
+    id: '3',
     date: new Date().toISOString(),
   };
 

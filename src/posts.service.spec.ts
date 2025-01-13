@@ -23,10 +23,8 @@ describe('PostsService', () => {
   });
    
   it('should find a post', () => {
-    const postWithId = {
+    const postWithId: Omit<Post, 'id' | 'date'> = {
       text: 'Some pre-existing post',
-      id: '1',
-      date: new Date().toISOString(),
     }
 
     expect(postsService.find('1')).toEqual(postWithId)

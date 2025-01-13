@@ -9,13 +9,12 @@ describe('PostsService', () => {
   beforeEach(async () => {
     postsService = new PostsService();
 
-    postsService.create({ text: 'Some pre-existing post' });
   });
 
   it('should add a new post', () => {
     const postId: Post = {
     ...post,
-    id: '2',
+    id: '1',
     date: new Date().toISOString(),
   };
 
@@ -23,8 +22,11 @@ describe('PostsService', () => {
   });
    
   it('should find a post', () => {
-    const postWithId: Omit<Post, 'id' | 'date'> = {
+    postsService.create({ text: 'Some pre-existing post' });
+    const postWithId = {
       text: 'Some pre-existing post',
+      id: '1',
+      date: new Date().toISOString(),
     }
 
     expect(postsService.find('1')).toEqual(postWithId)

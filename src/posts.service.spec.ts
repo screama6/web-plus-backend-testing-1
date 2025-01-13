@@ -25,10 +25,10 @@ describe('PostsService', () => {
     postsService.create({ text: 'Some pre-existing post' });
     const postWithId = {
       text: 'Some pre-existing post',
-      id: '1',
+      id: '2',
       date: new Date().toISOString(),
     }
 
-    expect(postsService.find('1')).toEqual(postWithId)
+    expect(postsService.find('2')).toEqual(postWithId)
   });
 });

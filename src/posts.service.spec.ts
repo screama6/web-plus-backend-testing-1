@@ -36,7 +36,6 @@ describe('PostsService', () => {
   });
    
   it('should find a post', () => {
-    const id ='1'
-    expect(postsService.find(id)).toEqual(posts[0])
+    expect(postsService.find(posts[0].id)).toEqual(posts[0])
   });
 });
